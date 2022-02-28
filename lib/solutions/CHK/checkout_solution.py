@@ -23,10 +23,10 @@ def checkout(skus):
             print('price: ', price)
 
             item_rule = quantity * item
+            print(f"item_rule {item_rule}")
 
-
-            
-
+            if item_rule in skus:
+                total += quantity * price
 
     return total
 
@@ -45,6 +45,7 @@ if __name__ == '__main__':
     
 
     
+
 
 
 
