@@ -6,7 +6,7 @@ def checkout(skus):
     Output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40}), (1, {'BEE': 40})]
+    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
     items_in_store = ['A', 'B', 'C', 'D', 'E']
     total = 0
     sorted_skus = ''
@@ -32,7 +32,8 @@ def checkout(skus):
 
     
     if ('B' and 'EE') in list(zip(*deleted_rules))[1]:
-        print('here')
+        print(list(zip(*deleted_rules)))
+        
 
 
 
@@ -129,3 +130,4 @@ if __name__ == '__main__':
 
 
  
+
