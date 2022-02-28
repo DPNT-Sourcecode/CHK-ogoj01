@@ -31,10 +31,9 @@ def checkout(skus):
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
     
-    for deleted, n_times in deleted_rules.items():
-        
-        
-        
+    if {'EE', 'B'} <= set(deleted_rules):
+        nr_EE = deleted_rules['EE']
+        nr_B = deleted_rules['B']
 
 
 
@@ -131,6 +130,7 @@ if __name__ == '__main__':
 
 
  
+
 
 
 
