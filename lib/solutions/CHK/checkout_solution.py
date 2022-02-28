@@ -95,7 +95,7 @@ if __name__ == '__main__':
     purchase = 'ABCDCBAABCABBAAA'
     print(checkout(purchase))
     print(505) 
-    
+    '''
     print('Test13...')
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     purchase = 'EE'
     print(checkout(purchase))
     print(40+40)
-    '''
+    
     print('Test15...')
     purchase = 'EEB'
     print(checkout(purchase))
@@ -124,3 +124,4 @@ if __name__ == '__main__':
 
 
  
+
