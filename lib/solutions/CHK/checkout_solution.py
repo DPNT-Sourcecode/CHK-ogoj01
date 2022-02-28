@@ -35,7 +35,7 @@ def checkout(skus):
         nr_EE = deleted_rules['EE']
         nr_B = deleted_rules['B']
 
-        total -= 30
+         
 
 
 
@@ -132,6 +132,7 @@ if __name__ == '__main__':
 
 
  
+
 
 
 
