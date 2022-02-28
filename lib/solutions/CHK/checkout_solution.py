@@ -72,10 +72,3 @@ if __name__ == '__main__':
     print(checkout(purchase))
     print(130+50+50+45+30+20+20+20+15)
 '''
-
-
-
-
-
-
-
