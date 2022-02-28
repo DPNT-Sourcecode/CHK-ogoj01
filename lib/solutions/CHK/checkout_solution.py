@@ -7,6 +7,7 @@ def checkout(skus):
     '''
 
     price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
+    price_special_rule = [(2, {'E': -30})]
     items_in_store = ['A', 'B', 'C', 'D', 'E']
     total = 0
     sorted_skus = ''
@@ -95,12 +96,12 @@ if __name__ == '__main__':
     purchase = 'ABCDCBAABCABBAAA'
     print(checkout(purchase))
     print(505) 
-    '''
+    
     print('Test13...')
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
     print(200+50+45+45+30+20+20+20+15+40+40)
-    
+    '''
     print('Test14...')
     purchase = 'EE'
     print(checkout(purchase))
@@ -124,4 +125,5 @@ if __name__ == '__main__':
 
 
  
+
 
