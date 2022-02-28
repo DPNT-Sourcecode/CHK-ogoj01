@@ -19,13 +19,15 @@ def checkout(skus):
         for item, price in item_map.items():
             
             price_rule = quantity * item
-            print(f"item_rule {price_rule}")
+            print(f"price_rule {price_rule}")
 
             if price_rule in skus:
                 print(total)
                 print(price_rule)
                 print(skus.count(price_rule))
                 total += skus.count(price_rule) * price
+                skus.replace(price_rule, '')
+                print(f"skus: {skus}")
                 print(total)
 
             else:
@@ -69,6 +71,7 @@ if __name__ == '__main__':
     
 
     
+
 
 
 
