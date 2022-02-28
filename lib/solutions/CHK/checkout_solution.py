@@ -90,10 +90,15 @@ if __name__ == '__main__':
     purchase = 'ABCDCBAABCABBAAA'
     print(checkout(purchase))
     print(505) 
-    '''
+    
     print('Test13...')
-    purchase = 'ABCDCBAABCABBAAAEE'
+    purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
     print(200+50+45+45+30+20+20+20+15+40+40)
+    '''
+    print('Test14...')
+    purchase = 'ABCDCBAABCABBAAAEE'
+    print(checkout(purchase))
+    print(200+50+50+45+45+30+20+20+20+15+40+40)
 
  
