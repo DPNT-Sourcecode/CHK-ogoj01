@@ -6,7 +6,7 @@ def checkout(skus):
     output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15})]
+    price_rules = [(3, {'A': 130}), (2, {'B': 45}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15})]
     items_in_store = ['A', 'B', 'C', 'D']
     total = 0
 
@@ -22,11 +22,12 @@ def checkout(skus):
             print('item: ', item)
             print('price: ', price)
 
-            item_rule = quantity * item
-            print(f"item_rule {item_rule}")
+            price_rule = quantity * item
+            print(f"item_rule {price_rule}")
 
-            if item_rule in skus:
+            if price_rule in skus:
                 total += quantity * price
+                
             else:
                 print('not found')
 
@@ -55,13 +56,14 @@ if __name__ == '__main__':
     print('Test5...')
     purchase = 'AA'
     print(checkout(purchase))
-    print(50+30+20+15)
+    print(50+50)
 
 
 
     
 
     
+
 
 
 
