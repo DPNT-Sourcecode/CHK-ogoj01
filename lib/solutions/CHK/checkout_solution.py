@@ -9,10 +9,14 @@ def checkout(skus):
     price_rules = [(3, {'A': 130}), (2, {'B': 45}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15})]
     items_in_store = ['A', 'B', 'C', 'D']
     total = 0
+    sorted_skus = ''
 
     for item in skus:
         if item not in items_in_store:
             return -1
+
+    sorted_skus = ''.join(sorted(skus))
+    
 
     for quantity, item_map in price_rules:
         for item, price in item_map.items():
@@ -73,9 +77,9 @@ if __name__ == '__main__':
     print(130+50+50+45+30+20+20+20+15)
     '''
     print('Test10...')
-    purchase = 'ABCD'
+    purchase = 'ABCDA'
     print(checkout(purchase))
-    print(50+30+20+15)
+    print(130+30+20+15)
 
     '''
     print('Test11...')
