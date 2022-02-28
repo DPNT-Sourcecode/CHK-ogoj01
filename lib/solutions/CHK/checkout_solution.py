@@ -22,10 +22,11 @@ def checkout(skus):
             print('item: ', item)
             print('price: ', price)
 
-            bill = quantity * price
-            print(f"bill: {bill}")
+            item_rule = quantity * item
 
-            total += bill
+
+            
+
 
     return total
 
@@ -44,14 +45,6 @@ if __name__ == '__main__':
     
 
     
-
-
-
-
-
-
-
-
 
 
 
