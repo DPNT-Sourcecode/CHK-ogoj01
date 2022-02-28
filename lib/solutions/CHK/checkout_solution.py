@@ -17,6 +17,8 @@ def checkout(skus):
 
     sorted_skus = ''.join(sorted(skus))
 
+    deleted_rules = []
+
     for quantity, item_map in price_rules:
         for item, price in item_map.items():
             
@@ -24,7 +26,10 @@ def checkout(skus):
             
             if price_rule in sorted_skus:                
                 total += sorted_skus.count(price_rule) * price
+                deleted_rules.append(price_rule)
                 sorted_skus = sorted_skus.replace(price_rule, '')
+
+    print(deleted_rules)
 
     return total
 
