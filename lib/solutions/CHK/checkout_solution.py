@@ -8,7 +8,6 @@ def checkout(skus):
 
     price_rules = [(1, {'A': 50})]
     items_in_store = ['A', 'B', 'C', 'D']
-    items = ''
     total = 0
 
     for item in skus:
@@ -24,9 +23,10 @@ def checkout(skus):
 
             bill = quantity * price
             print(f"bill: {bill}")
-    
 
-    return 'OK'
+            total += bill
+
+    return total
 
 if __name__ == '__main__':
     #purchase = 'ABCFF'
@@ -35,11 +35,15 @@ if __name__ == '__main__':
     purchase = 'A'
     print(checkout(purchase))
 
+    purchase = 'AA'
+    print(checkout(purchase))
+
 
 
     
 
     
+
 
 
 
