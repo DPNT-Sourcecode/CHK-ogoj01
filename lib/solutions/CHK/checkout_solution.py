@@ -6,8 +6,7 @@ def checkout(skus):
     Output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
-    price_special_rule = [(2, {'E': -30})]
+    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
     items_in_store = ['A', 'B', 'C', 'D', 'E']
     total = 0
     sorted_skus = ''
@@ -25,9 +24,10 @@ def checkout(skus):
             
             price_rule = quantity * item
             
-            if price_rule in sorted_skus:                
-                total += sorted_skus.count(price_rule) * price
-                deleted_rules.append(price_rule)
+            if price_rule in sorted_skus:   
+                nr_present_price_rules = sorted_skus.count(price_rule)       
+                total += nr_present_price_rules * price
+                deleted_rules.append((nr_present_price_rules, price_rule))
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
     print(deleted_rules)
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     print(40+40)
     
     print('Test15...')
-    purchase = 'EEB'
+    purchase = 'EEEEEB'
     print(checkout(purchase))
     print(40+40+0)
     '''
@@ -125,5 +125,6 @@ if __name__ == '__main__':
 
 
  
+
 
 
