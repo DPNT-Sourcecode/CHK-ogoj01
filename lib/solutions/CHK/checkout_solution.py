@@ -16,16 +16,23 @@ def checkout(skus):
             return -1
 
     for quantity, item_map in price_rules:
-        for 
+        for item, price in item_map.items():
+            print('quantity: ', quantity)
+            print('item_map: ', item_map)
+            print('item: ', item)
+            print('price: ', price)
+
+            bill = quantity * price
+            print(f"bill: {bill}")
     
 
     return 'OK'
 
 if __name__ == '__main__':
-    purchase = 'ABCFF'
-    print(checkout(purchase))
+    #purchase = 'ABCFF'
+    #print(checkout(purchase))
 
-    purchase = 'ABCD'
+    purchase = 'A'
     print(checkout(purchase))
 
 
@@ -33,6 +40,7 @@ if __name__ == '__main__':
     
 
     
+
 
 
 
