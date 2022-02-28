@@ -17,23 +17,24 @@ def checkout(skus):
 
     for quantity, item_map in price_rules:
         for item, price in item_map.items():
-            print('quantity: ', quantity)
-            print('item_map: ', item_map)
-            print('item: ', item)
-            print('price: ', price)
-
+            
             price_rule = quantity * item
             print(f"item_rule {price_rule}")
 
             if price_rule in skus:
-                total += quantity * price
-                
+                print(total)
+                print(price_rule)
+                print(skus.count(price_rule))
+                total += skus.count(price_rule) * price
+                print(total)
+
             else:
                 print('not found')
 
     return total
 
 if __name__ == '__main__':
+    '''
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -52,17 +53,23 @@ if __name__ == '__main__':
     purchase = 'ABCD'
     print(checkout(purchase))
     print(50+30+20+15)
-
+    
     print('Test5...')
     purchase = 'AA'
     print(checkout(purchase))
     print(50+50)
+    '''
+    print('Test6...')
+    purchase = 'AAA'
+    print(checkout(purchase))
+    print(130)
 
 
 
     
 
     
+
 
 
 
