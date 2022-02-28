@@ -6,7 +6,7 @@ def checkout(skus):
     Output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 0}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
+    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 1}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
     items_in_store = ['A', 'B', 'C', 'D', 'E']
     total = 0
     sorted_skus = ''
@@ -22,9 +22,13 @@ def checkout(skus):
             
             price_rule = quantity * item
             print(price_rule)
+            print(sorted_skus)
             if price_rule in sorted_skus:                
                 total += sorted_skus.count(price_rule) * price
-                sorted_skus = sorted_skus.replace(price_rule, '')                
+                sorted_skus = sorted_skus.replace(price_rule, '')
+            else:
+                print(f"price_rule {price_rule} not found")
+
 
     return total
 
@@ -97,9 +101,9 @@ if __name__ == '__main__':
     print(200+50+45+45+30+20+20+20+15+40+40)
     '''
     print('Test14...')
-    purchase = 'ABCDCBAABCABBAAAEE'
+    purchase = 'AAAAAABBBBBCCCDEEE'
     print(checkout(purchase))
-    print(200+50+50+45+45+30+20+20+20+15+40+40)
+    print(200+50+45+45+30+20+20+20+15+1+40)
 
  
 
