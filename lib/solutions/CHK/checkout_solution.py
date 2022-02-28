@@ -6,7 +6,7 @@ def checkout(skus):
     output: total checkout value (attention to special offers)
     '''
 
-    price_rules = []
+    price_rules = [(1, {'A': 50})]
     items_in_store = ['A', 'B', 'C', 'D']
     items = ''
     total = 0
@@ -15,6 +15,8 @@ def checkout(skus):
         if item not in items_in_store:
             return -1
 
+    for quantity, item_map in price_rules:
+        for 
     
 
     return 'OK'
@@ -31,6 +33,7 @@ if __name__ == '__main__':
     
 
     
+
 
 
 
