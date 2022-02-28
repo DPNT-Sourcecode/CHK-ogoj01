@@ -6,7 +6,7 @@ def checkout(skus):
     output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(1, {'A': 50}), (1, {'B': 30}), (1, {'c': 20}), (1, {'D': 15})]
+    price_rules = [(1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15})]
     items_in_store = ['A', 'B', 'C', 'D']
     total = 0
 
@@ -33,16 +33,27 @@ def checkout(skus):
     return total
 
 if __name__ == '__main__':
-    #purchase = 'ABCFF'
-    #print(checkout(purchase))
+    print('Test1...')
+    purchase = 'ABCFF'
+    print(checkout(purchase))
 
-    #purchase = 'A'
-    #print(checkout(purchase))
+    print('Test2...')
+    purchase = 'A'
+    print(checkout(purchase))
+    print(50)
 
-    #purchase = 'AB'
-    #print(checkout(purchase))
+    print('Test3...')
+    purchase = 'AB'
+    print(checkout(purchase))
+    print(50+30)
 
+    print('Test4...')
     purchase = 'ABCD'
+    print(checkout(purchase))
+    print(50+30+20+15)
+
+    print('Test5...')
+    purchase = 'AA'
     print(checkout(purchase))
     print(50+30+20+15)
 
@@ -51,6 +62,7 @@ if __name__ == '__main__':
     
 
     
+
 
 
 
