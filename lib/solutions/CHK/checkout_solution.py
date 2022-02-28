@@ -16,22 +16,21 @@ def checkout(skus):
             return -1
 
     sorted_skus = ''.join(sorted(skus))
-    
 
     for quantity, item_map in price_rules:
         for item, price in item_map.items():
             
             price_rule = quantity * item
-           
-            if price_rule in skus:                
-                total += skus.count(price_rule) * price
-                skus = skus.replace(price_rule, '')                
+
+            if price_rule in sorted_skus:                
+                total += sorted_skus.count(price_rule) * price
+                sorted_skus = sorted_skus.replace(price_rule, '')                
 
     return total
 
-
+'''
 if __name__ == '__main__':
-    '''   
+       
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -75,13 +74,13 @@ if __name__ == '__main__':
     purchase = 'AAAAABBBCCCD'
     print(checkout(purchase))
     print(130+50+50+45+30+20+20+20+15)
-    '''
+    
     print('Test10...')
     purchase = 'ABCDA'
     print(checkout(purchase))
-    print(130+30+20+15)
+    print(50+30+20+15+50)
 
-    '''
+  
     print('Test11...')
     purchase = 'ABCDABCD'
     print(checkout(purchase))
@@ -90,5 +89,6 @@ if __name__ == '__main__':
     print('Test12...')
     purchase = 'ABCDCBAABCABBAAA'
     print(checkout(purchase))
-    print(505)  
-    '''
+    print(505) 
+''' 
+ 
