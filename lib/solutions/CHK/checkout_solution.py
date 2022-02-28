@@ -17,7 +17,7 @@ def checkout(skus):
 
     sorted_skus = ''.join(sorted(skus))
 
-    deleted_rules = []
+    deleted_rules = {}
 
     for quantity, item_map in price_rules:
         for item, price in item_map.items():
@@ -27,12 +27,13 @@ def checkout(skus):
             if price_rule in sorted_skus:   
                 nr_present_price_rules = sorted_skus.count(price_rule)       
                 total += nr_present_price_rules * price
-                deleted_rules.append((nr_present_price_rules, price_rule))
+                deleted_rules.update({price_rule, nr_present_price_rules})
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
     
-    if ('B' and 'EE') in list(zip(*deleted_rules))[1]:
-        print(list(zip(*deleted_rules)))
+    #if ('B' and 'EE') in list(zip(*deleted_rules))[1]:
+    print(deleted_rules)
+        
         
 
 
@@ -113,7 +114,7 @@ if __name__ == '__main__':
     print(40+40)
     
     print('Test15...')
-    purchase = 'ABCEE'
+    purchase = 'ABCEEE'
     print(checkout(purchase))
     print(40+40+0)
     '''
@@ -130,4 +131,5 @@ if __name__ == '__main__':
 
 
  
+
 
