@@ -35,6 +35,8 @@ def checkout(skus):
         nr_EE = deleted_rules['EE']
         nr_B = deleted_rules['B']
 
+        total -= 30
+
 
 
     return total
@@ -108,12 +110,12 @@ if __name__ == '__main__':
     print(200+50+45+45+30+20+20+20+15+40+40)
     '''
     print('Test14...')
-    purchase = 'EE'
+    purchase = 'EEB'
     print(checkout(purchase))
-    print(40+40)
+    print(40+40+0)
     
     print('Test15...')
-    purchase = 'ABCEEEEE'
+    purchase = 'ABCEEE'
     print(checkout(purchase))
     print(40+40+0)
     '''
@@ -130,6 +132,7 @@ if __name__ == '__main__':
 
 
  
+
 
 
 
