@@ -73,6 +73,18 @@ if __name__ == '__main__':
     print(130+50+50+45+30+20+20+20+15)
     '''
     print('Test10...')
+    purchase = 'ABCD'
+    print(checkout(purchase))
+    print(50+30+20+15)
+
+    '''
+    print('Test11...')
     purchase = 'ABCDABCD'
     print(checkout(purchase))
-    print(130+50+50+45+30+20+20+20+15)
+    print(215)   
+
+    print('Test12...')
+    purchase = 'ABCDCBAABCABBAAA'
+    print(checkout(purchase))
+    print(505)  
+    '''
