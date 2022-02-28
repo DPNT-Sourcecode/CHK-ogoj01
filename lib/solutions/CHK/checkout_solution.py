@@ -17,6 +17,22 @@ def checkout(skus):
 
     
 
+    return 'OK'
+
+if __name__ == '__main__':
+    purchase = 'ABCFF'
+    print(checkout(purchase))
+
+    purchase = 'ABCD'
+    print(checkout(purchase))
+
+
+
+    
+
+    
+
+
 
 
 
