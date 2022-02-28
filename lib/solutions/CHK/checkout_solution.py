@@ -6,8 +6,8 @@ def checkout(skus):
     Output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(3, {'A': 130}), (2, {'B': 45}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15})]
-    items_in_store = ['A', 'B', 'C', 'D']
+    price_rules = [(3, {'A': 130}), (2, {'B': 45}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
+    items_in_store = ['A', 'B', 'C', 'D', 'E']
     total = 0
     sorted_skus = ''
 
