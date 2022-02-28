@@ -21,8 +21,7 @@ def checkout(skus):
         for item, price in item_map.items():
             
             price_rule = quantity * item
-            print(price_rule)
-            print(sorted_skus)
+            
             if price_rule in sorted_skus:                
                 total += sorted_skus.count(price_rule) * price
                 sorted_skus = sorted_skus.replace(price_rule, '')
@@ -106,4 +105,5 @@ if __name__ == '__main__':
     print(200+50+45+45+30+20+20+20+15+1+40)
 
  
+
 
