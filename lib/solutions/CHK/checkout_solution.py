@@ -34,8 +34,16 @@ def checkout(skus):
     if {'EE', 'B'} <= set(deleted_rules):
         nr_EE = deleted_rules['EE']
         nr_B = deleted_rules['B']
+        deduct = 0
 
-        
+        for i in range(nr_EE):
+            for j in range(nr_B):
+                nr_B -=1
+                deduct += 40
+
+        print(deduct)
+
+
                  
 
 
@@ -133,6 +141,7 @@ if __name__ == '__main__':
 
 
  
+
 
 
 
