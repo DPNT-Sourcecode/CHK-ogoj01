@@ -30,7 +30,10 @@ def checkout(skus):
                 deleted_rules.append((nr_present_price_rules, price_rule))
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
-    print(deleted_rules)
+    if ('B' and 'EE') in deleted_rules:
+        print('ok')
+
+
 
     return total
 
@@ -125,6 +128,7 @@ if __name__ == '__main__':
 
 
  
+
 
 
 
