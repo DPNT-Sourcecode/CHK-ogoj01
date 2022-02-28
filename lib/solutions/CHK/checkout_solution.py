@@ -25,9 +25,9 @@ def checkout(skus):
 
     return total
 
-'''
+
 if __name__ == '__main__':
-    
+    '''   
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -71,4 +71,8 @@ if __name__ == '__main__':
     purchase = 'AAAAABBBCCCD'
     print(checkout(purchase))
     print(130+50+50+45+30+20+20+20+15)
-'''
+    '''
+    print('Test10...')
+    purchase = 'ABCDABCD'
+    print(checkout(purchase))
+    print(130+50+50+45+30+20+20+20+15)
