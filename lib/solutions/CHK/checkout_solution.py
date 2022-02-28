@@ -26,7 +26,7 @@ def checkout(skus):
                 print(price_rule)
                 print(skus.count(price_rule))
                 total += skus.count(price_rule) * price
-                skus.replace(price_rule, '')
+                skus = skus.replace(price_rule, '')
                 print(f"skus: {skus}")
                 print(total)
 
@@ -60,17 +60,34 @@ if __name__ == '__main__':
     purchase = 'AA'
     print(checkout(purchase))
     print(50+50)
-    '''
+    
     print('Test6...')
     purchase = 'AAA'
     print(checkout(purchase))
     print(130)
+    
+    print('Test7...')
+    purchase = 'AAAA'
+    print(checkout(purchase))
+    print(130+50)
+    
+    print('Test8...')
+    purchase = 'AAAAA'
+    print(checkout(purchase))
+    print(130+50+50)
+    '''
+    print('Test9...')
+    purchase = 'AAAAABBBCCCD'
+    print(checkout(purchase))
+    print(130+50+50)
+
 
 
 
     
 
     
+
 
 
 
