@@ -39,7 +39,8 @@ def calculate_price(skus: str, price_rules: list) -> int:
             
             price_rule = quantity * item
             
-            if price_rule in sorted_skus:   
+            if price_rule in sorted_skus:  
+                print('Applying discount...') 
                 repetitions = sorted_skus.count(price_rule)       
                 total += repetitions * price                
                 sorted_skus = sorted_skus.replace(price_rule, '')
@@ -70,7 +71,10 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                         product = shop_list.index(value)
                         del(shop_list[product])
             else:
-                print('')
+                print('No offer available for current shop list...')
+
+    shop_list_with_offer = 
+    return 
 
                 
 
@@ -163,5 +167,6 @@ if __name__ == '__main__':
     '''
 
     
+
 
 
