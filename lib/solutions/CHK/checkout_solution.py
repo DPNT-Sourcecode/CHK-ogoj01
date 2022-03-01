@@ -89,7 +89,7 @@ class Constant:
 
 if __name__ == '__main__':    
 
-   
+    '''   
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     print('Test13...')
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
-    print(200+50+45+45+3*20+15+40+40)
+    print(200+50+45+45+0+3*20+15+40+40)
     
     print('Test14...')
     purchase = 'EEB'
@@ -164,10 +164,11 @@ if __name__ == '__main__':
     purchase = 'EEBB'
     print(checkout(purchase))
     print(40+40+0+30)
-    '''
+    
     print('Test17...')
     purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBB'
     print(checkout(purchase))
     print(28*40 +0)
     
+
 
