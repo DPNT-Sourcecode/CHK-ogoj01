@@ -30,8 +30,9 @@ def checkout(skus):
 def check_invalid(skus, price_rules):
     #items_in_store = ['A', 'B', 'C', 'D', 'E']
     items_in_store = list(zip(*price_rules))[1]
+    keys = set().union(*(item.keys() for item in items_in_store))
 
-    print(items_in_store)
+    print(list(keys))
 
     #for item in skus:
     #    if item not in items_in_store:
@@ -126,7 +127,10 @@ if __name__ == '__main__':
     print(checkout(purchase))
     print(40+40+0+45)
     '''
-    print(check_invalid())
+
+    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
+    
+    print(check_invalid('ABCDEEEE', price_rules))
 
 
  
