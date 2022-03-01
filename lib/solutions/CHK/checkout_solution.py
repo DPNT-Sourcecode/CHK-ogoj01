@@ -1,5 +1,8 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
+from email import iterators
+
+
 def checkout(skus):
     '''
     Input: string of goods to checkout. Example: 'ABCADAZ'
@@ -71,8 +74,10 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                 else:
                     print('Calculating offers...')
                     max_offer = sorted_skus.count(value)
+                    iterator = min(repetitions, max_offer)
+
                     print('max: ',max_offer)
-                    for i in range(1, max_offer+1): 
+                    for _ in range(1, iterator+1): 
                         shop_list = list(sorted_skus)                        
                         shop_list.pop(shop_list.index(value))                        
                         sorted_skus = ''.join(shop_list)
@@ -166,12 +171,13 @@ if __name__ == '__main__':
     purchase = 'EEBB'
     print(checkout(purchase))
     print(40+40+0+30)
+    '''
     
     print('Test17...')
     purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBB'
     print(checkout(purchase))
     print(28*40 +0)
-    '''
+    
     print('Test13...')
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
@@ -181,6 +187,11 @@ if __name__ == '__main__':
     purchase = 'EEBB'
     print(checkout(purchase))
     print(40+40+0+30)
+
+    print('Test18...')
+    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBBBBBB'
+    print(checkout(purchase))
+    print(67*40+200+200+100)
     
 
 
