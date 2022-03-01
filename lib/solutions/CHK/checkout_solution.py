@@ -66,16 +66,17 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                 print(repetitions)
                 
                 if value not in sorted_skus:
-                    print(sorted_skus)
+                    #print(sorted_skus)
                     print('No offer available for current shop list...')                    
                     #return sorted_skus
 
                 else:
                     print('Calculating offers...')
                     for i in range(1, repetitions+1):
-                        print(i)
+                        #print(i)
                         shop_list = list(sorted_skus)
-                        print(shop_list)
+                        #print(shop_list)
+                        
                         shop_list.pop(shop_list.index(value))
                         #product = shop_list.index(value)
                         #del(shop_list[product])
@@ -85,7 +86,8 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                 print('No offer available for current shop list...')
                 #shop_list = list(sorted_skus)
 
-    shop_list_with_offer = ''.join(shop_list)    
+    shop_list_with_offer = ''.join(shop_list)  
+    print(shop_list_with_offer)  
     return shop_list_with_offer
 
 class Constant:
