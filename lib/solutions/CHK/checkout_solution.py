@@ -6,10 +6,10 @@ def checkout(skus):
     Output: total checkout value (attention to special offers)
     '''
 
-    price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
-    
-    if is_invalid(skus, price_rules) is True: return -1 
+    price_rules = Constant.PRICE_RULES
+    free_rules = Constant.OFFER_RULES
 
+    if is_invalid(skus, price_rules) is True: return -1 
 
 
     total = calculate_price(skus, price_rules) 
@@ -79,13 +79,12 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
     shop_list_with_offer = ''.join(shop_list)    
     return shop_list_with_offer
 
-                
+class Constant:
 
-if __name__ == '__main__':
+    PRICE_RULES = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
+    OFFER_RULES = [(2, {'E': 'B'})]                
 
-    free_rules = [(2, {'E': 'B'})]
-
-    print(calculate_offer_policy('EEBB', free_rules))
+if __name__ == '__main__':    
 
     '''
     print('Test1...')
@@ -170,6 +169,7 @@ if __name__ == '__main__':
     '''
 
     
+
 
 
 
