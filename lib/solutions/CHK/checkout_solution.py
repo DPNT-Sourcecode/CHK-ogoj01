@@ -28,15 +28,14 @@ def checkout(skus):
     return total
 
 def check_invalid(skus, price_rules):
-    #items_in_store = ['A', 'B', 'C', 'D', 'E']
-    items_in_store = list(zip(*price_rules))[1]
-    keys = set().union(*(item.keys() for item in items_in_store))
 
-    print(list(keys))
+    products_map_list = list(zip(*price_rules))[1]
+    items_in_store = list(set().union(*(item.keys() for item in products_map_list)))  
 
-    #for item in skus:
-    #    if item not in items_in_store:
-    #        return -1
+    return [(item not in items_in_store) for item in skus] ? 
+    for item in skus:
+        if item not in items_in_store:
+            return -1
 
 
 
@@ -134,3 +133,4 @@ if __name__ == '__main__':
 
 
  
+
