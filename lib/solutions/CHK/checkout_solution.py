@@ -153,19 +153,19 @@ if __name__ == '__main__':
     purchase = 'EEB'
     print(checkout(purchase))
     print(40+40+0)
-    '''
+    
     print('Test15...')
     purchase = 'ABCEEE'
     print(checkout(purchase))
-    print(40+40+0)
+    print(50+20+40*3)
     
     print('Test16...')
     purchase = 'EEBB'
     print(checkout(purchase))
-    print(40+40+0+45)
-
+    print(40+40+0+30)
+    
     print('Test17...')
-    purchase = 'EE EE EE EE BB'
+    purchase = 'EEEEEEEEBB'
     print(checkout(purchase))
-    print(40+40+0+45)
-    ''' 
+    print(40*8)
+    
