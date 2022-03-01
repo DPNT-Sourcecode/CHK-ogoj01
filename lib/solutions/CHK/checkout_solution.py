@@ -7,7 +7,8 @@ def checkout(skus):
     '''
 
     price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
-    
+    free_rules = [(2, {'E', 'B'})]
+
     if is_invalid(skus, price_rules) is True:
         return -1 
 
@@ -61,7 +62,7 @@ if __name__ == '__main__':
     purchase = 'AB'
     print(checkout(purchase))
     print(50+30)
-'''
+
     print('Test4...')
     purchase = 'ABCD'
     print(checkout(purchase))
@@ -85,34 +86,29 @@ if __name__ == '__main__':
     print('Test8...')
     purchase = 'AAAAA'
     print(checkout(purchase))
-    print(130+50+50)
+    print(200)
     
     print('Test9...')
     purchase = 'AAAAABBBCCCD'
     print(checkout(purchase))
-    print(130+50+50+45+30+20+20+20+15)
+    print(200+45+30+20+20+20+15)
     
     print('Test10...')
     purchase = 'ABCDA'
     print(checkout(purchase))
     print(50+30+20+15+50)
 
-  
+
     print('Test11...')
     purchase = 'ABCDABCD'
     print(checkout(purchase))
-    print(215)   
-
-    print('Test12...')
-    purchase = 'ABCDCBAABCABBAAA'
-    print(checkout(purchase))
-    print(505) 
-    
+    print(215)  
+   
     print('Test13...')
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
     print(200+50+45+45+30+20+20+20+15+40+40)
-    
+'''
     print('Test14...')
     purchase = 'EEB'
     print(checkout(purchase))
@@ -137,6 +133,7 @@ if __name__ == '__main__':
 
 
  
+
 
 
 
