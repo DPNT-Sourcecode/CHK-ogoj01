@@ -8,12 +8,28 @@ def checkout(skus):
 
     price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
     
+    if is_invalid(skus, price_rules) is True:
+        return -1 
+
+    total = calculate_price(skus, price_rules) 
+
+    return total   
+
+
     
 
-    if is_invalid(skus, price_rules) is True:
-        return -1  
+def is_invalid(skus: str, price_rules: list) -> bool:
 
+    products_map_list = list(zip(*price_rules))[1]
+    items_in_store = list(set().union(*(item.keys() for item in products_map_list)))  
 
+    for item in skus:
+        if item not in items_in_store:
+            return True
+    return False 
+
+def calculate_price(skus: str, price_rules: list) -> int:
+    
     total = 0
     sorted_skus = ''
     sorted_skus = ''.join(sorted(skus))
@@ -30,21 +46,8 @@ def checkout(skus):
 
     return total
 
-def is_invalid(skus: str, price_rules: list) -> bool:
-
-    products_map_list = list(zip(*price_rules))[1]
-    items_in_store = list(set().union(*(item.keys() for item in products_map_list)))  
-
-    for item in skus:
-        if item not in items_in_store:
-            return True
-    return False 
-
-def calculate_price(skus, price_rules):
-
-
 if __name__ == '__main__':
-    '''
+    
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -58,7 +61,7 @@ if __name__ == '__main__':
     purchase = 'AB'
     print(checkout(purchase))
     print(50+30)
-
+'''
     print('Test4...')
     purchase = 'ABCD'
     print(checkout(purchase))
@@ -134,5 +137,6 @@ if __name__ == '__main__':
 
 
  
+
 
 
