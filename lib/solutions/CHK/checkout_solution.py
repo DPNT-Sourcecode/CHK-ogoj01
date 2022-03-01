@@ -76,7 +76,7 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                     print('Offers applied to shop list!')
             else:
                 print('No offer available for current shop list...')
-                shop_list = list(sorted_skus)
+                #shop_list = list(sorted_skus)
 
     shop_list_with_offer = ''.join(shop_list)    
     return shop_list_with_offer
@@ -127,7 +127,7 @@ if __name__ == '__main__':
     purchase = 'AAAAA'
     print(checkout(purchase))
     print(200)
-    '''
+    
     print('Test9...')
     purchase = 'AAAAABBBCCCD'
     print(checkout(purchase))
@@ -163,9 +163,9 @@ if __name__ == '__main__':
     purchase = 'EEBB'
     print(checkout(purchase))
     print(40+40+0+30)
-    
+    '''
     print('Test17...')
-    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBB'
+    purchase = 'BBEEEE'
     print(checkout(purchase))
-    print(50*40)
+    print(4*40)
     
