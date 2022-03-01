@@ -69,14 +69,14 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
                 else:
                     print('Calculating offers...')
-                    for idx in range(1, repetitions+1):
+                    for _ in range(1, repetitions+1):
                         shop_list = list(sorted_skus)
                         product = shop_list.index(value)
                         del(shop_list[product])
                     print('Offers applied to shop list!')
             else:
                 print('No offer available for current shop list...')
-                #shop_list = list(sorted_skus)
+                shop_list = list(sorted_skus)
 
     shop_list_with_offer = ''.join(shop_list)    
     return shop_list_with_offer
@@ -165,7 +165,7 @@ if __name__ == '__main__':
     print(40+40+0+30)
     '''
     print('Test17...')
-    purchase = 'BBEEEE'
+    purchase = 'EEEEBB'
     print(checkout(purchase))
-    print(4*40)
+    print(2*40 +0)
     
