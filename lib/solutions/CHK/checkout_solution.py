@@ -7,12 +7,13 @@ def checkout(skus):
     '''
 
     price_rules = Constant.PRICE_RULES
-    free_rules = Constant.OFFER_RULES
+    offer_rules = Constant.OFFER_RULES
 
-    if is_invalid(skus, price_rules) is True: return -1 
+    if is_invalid(skus, price_rules) is True: return -1
 
+    skus_with_offers = calculate_offer_policy(skus, offer_rules)
 
-    total = calculate_price(skus, price_rules) 
+    total = min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
     return total  
 
@@ -125,7 +126,7 @@ if __name__ == '__main__':
     purchase = 'AAAAA'
     print(checkout(purchase))
     print(200)
-    
+    '''
     print('Test9...')
     purchase = 'AAAAABBBCCCD'
     print(checkout(purchase))
@@ -146,7 +147,7 @@ if __name__ == '__main__':
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
     print(200+50+45+45+30+20+20+20+15+40+40)
-
+    '''
     print('Test14...')
     purchase = 'EEB'
     print(checkout(purchase))
@@ -166,9 +167,7 @@ if __name__ == '__main__':
     purchase = 'EE EE EE EE BB'
     print(checkout(purchase))
     print(40+40+0+45)
-    '''
-
-    
+    ''' 
 
 
 
