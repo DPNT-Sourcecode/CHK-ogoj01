@@ -11,6 +11,7 @@ def checkout(skus):
     total = 0
     sorted_skus = ''
 
+    return -1 if is_invalid(skus, price_rules) is True else continue 
     
 
     sorted_skus = ''.join(sorted(skus))
@@ -27,17 +28,12 @@ def checkout(skus):
 
     return total
 
-def check_invalid(skus, price_rules):
+def is_invalid(skus, price_rules):
 
     products_map_list = list(zip(*price_rules))[1]
     items_in_store = list(set().union(*(item.keys() for item in products_map_list)))  
 
-    return [(item not in items_in_store) for item in skus] ? 
-    for item in skus:
-        if item not in items_in_store:
-            return -1
-
-
+    return True if [(item not in items_in_store) for item in skus] else False
 
 if __name__ == '__main__':
     '''
@@ -133,4 +129,5 @@ if __name__ == '__main__':
 
 
  
+
 
