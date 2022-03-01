@@ -66,7 +66,11 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                 else:
                     print('Calculating offers...')
                     for idx in range(1, repetitions+1):
-                        
+                        shop_list = list(sorted_skus)
+                        product = shop_list.index(value)
+                        del(shop_list[product])
+            else:
+                print('')
 
                 
 
@@ -74,7 +78,7 @@ if __name__ == '__main__':
 
     free_rules = [(2, {'E': 'B'})]
 
-    print(calculate_free_policy('ACDEEEEEEEEEEEE', free_rules))
+    print(calculate_offer_policy('ACDEEEEBEEEEEEEE', free_rules))
 
     '''
     print('Test1...')
@@ -159,4 +163,5 @@ if __name__ == '__main__':
     '''
 
     
+
 
