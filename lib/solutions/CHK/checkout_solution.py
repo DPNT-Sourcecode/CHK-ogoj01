@@ -72,7 +72,7 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
                 else:
                     print('Calculating offers...')
-                    for i in range(1, repetitions+1):
+                    for i in range(1, repetitions+1):                       
                         #print(i)
                         shop_list = list(sorted_skus)
                         #print(shop_list)
@@ -178,3 +178,4 @@ if __name__ == '__main__':
     print(checkout(purchase))
     print(4*40 +0)
     
+
