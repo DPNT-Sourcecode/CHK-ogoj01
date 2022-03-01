@@ -7,17 +7,13 @@ def checkout(skus):
     '''
 
     price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
-    items_in_store = ['A', 'B', 'C', 'D', 'E']
+    
     total = 0
     sorted_skus = ''
 
-    for item in skus:
-        if item not in items_in_store:
-            return -1
+    
 
     sorted_skus = ''.join(sorted(skus))
-
-    deleted_rules = {}
 
     for quantity, item_map in price_rules:
         for item, price in item_map.items():
@@ -26,23 +22,19 @@ def checkout(skus):
             
             if price_rule in sorted_skus:   
                 nr_present_price_rules = sorted_skus.count(price_rule)       
-                total += nr_present_price_rules * price
-                deleted_rules[f"{price_rule}"] = nr_present_price_rules
+                total += nr_present_price_rules * price                
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
-    
-    if {'EE', 'B'} <= set(deleted_rules):
-        nr_EE = deleted_rules['EE']
-        nr_B = deleted_rules['B']
-        
-        deduct = 0
-        
-
-                 
-
-
-
     return total
+
+def check_invalid(skus):
+    #items_in_store = ['A', 'B', 'C', 'D', 'E']
+    items_in_store = 
+
+    for item in skus:
+        if item not in items_in_store:
+            return -1
+
 
 
 if __name__ == '__main__':
