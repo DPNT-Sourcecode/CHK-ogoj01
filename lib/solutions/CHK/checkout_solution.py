@@ -41,7 +41,7 @@ def calculate_price(skus: str, price_rules: list) -> int:
             price_rule = quantity * item
             
             if price_rule in sorted_skus:  
-                print('Applying discount...') 
+                #print('Applying discount...') 
                 repetitions = sorted_skus.count(price_rule)       
                 total += repetitions * price                
                 sorted_skus = sorted_skus.replace(price_rule, '')
@@ -76,7 +76,7 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                     print('Offers applied to shop list!')
             else:
                 print('No offer available for current shop list...')
-                shop_list = sorted_skus
+                shop_list = list(sorted_skus)
 
     shop_list_with_offer = ''.join(shop_list)    
     return shop_list_with_offer
@@ -147,13 +147,13 @@ if __name__ == '__main__':
     print('Test13...')
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
-    print(200+50+45+45+30+20+20+20+15+40+40)
-    '''
+    print(200+50+45+45+3*20+15+40+40)
+    
     print('Test14...')
     purchase = 'EEB'
     print(checkout(purchase))
     print(40+40+0)
-    
+    '''
     print('Test15...')
     purchase = 'ABCEEE'
     print(checkout(purchase))
