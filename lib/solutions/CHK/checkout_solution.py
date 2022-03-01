@@ -46,28 +46,35 @@ def calculate_price(skus: str, price_rules: list) -> int:
 
     return total
 
-def calculate_free_policy(skus, free_rules) -> str:
+def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
     sorted_skus = ''
     sorted_skus = ''.join(sorted(skus))
 
-    for quantity, item_map in free_rules:
+    for quantity, item_map in offer_rules:
         for item, value in item_map.items():
 
-            free_rule = quantity * item
+            offer_rule = quantity * item
 
-            if free_rule in sorted_skus:
-
-                repetitions = sorted_skus.count(free_rule)
+            if offer_rule in sorted_skus:
+                repetitions = sorted_skus.count(offer_rule)
                 
                 if value not in sorted_skus:
-                    print('No offer available...')
+                    print('No offer available for current shop list...')
+                    return sorted_skus
+
+                else:
+                    print('Calculating offers...')
+                    for idx in range(1, repetitions+1):
+                        
+
+                
 
 if __name__ == '__main__':
 
     free_rules = [(2, {'E': 'B'})]
 
-    print(calculate_free_policy('EEEEEE', free_rules))
+    print(calculate_free_policy('ACDEEEEEEEEEEEE', free_rules))
 
     '''
     print('Test1...')
@@ -152,3 +159,4 @@ if __name__ == '__main__':
     '''
 
     
+
