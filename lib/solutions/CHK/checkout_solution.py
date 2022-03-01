@@ -9,15 +9,13 @@ def checkout(skus):
     price_rules = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
     free_rules = [(2, {'E', 'B'})]
 
-    if is_invalid(skus, price_rules) is True:
-        return -1 
+    if is_invalid(skus, price_rules) is True: return -1 
+
+
 
     total = calculate_price(skus, price_rules) 
 
-    return total   
-
-
-    
+    return total  
 
 def is_invalid(skus: str, price_rules: list) -> bool:
 
@@ -46,6 +44,16 @@ def calculate_price(skus: str, price_rules: list) -> int:
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
     return total
+
+def calculate_free_policy(skus, free_rules):
+
+    for quantity, item_map in free_rules:
+        for item, value in item_map.items():
+
+            
+
+    pass
+
 
 if __name__ == '__main__':
     
@@ -133,7 +141,3 @@ if __name__ == '__main__':
 
 
  
-
-
-
-
