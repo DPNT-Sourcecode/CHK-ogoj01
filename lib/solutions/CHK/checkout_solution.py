@@ -55,9 +55,14 @@ def calculate_free_policy(skus, free_rules):
             free_rule = quantity * item
 
             if free_rule in sorted_skus:
-                print(free_rule)
+                
 
 if __name__ == '__main__':
+
+    free_rules = [(2, {'E': 'B'})]
+
+    print(calculate_free_policy('EEEEEE', free_rules))
+
     '''
     print('Test1...')
     purchase = 'ABCFF'
@@ -140,10 +145,4 @@ if __name__ == '__main__':
     print(40+40+0+45)
     '''
 
-    free_rules = [(2, {'E', 'B'})]
-
-    print(calculate_free_policy('ABCDEEE',free_rules))
-
-
-
- 
+    
