@@ -165,7 +165,7 @@ if __name__ == '__main__':
     print(40+40+0+30)
     
     print('Test17...')
-    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBB'
+    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBB'
     print(checkout(purchase))
-    print(49*40)
+    print(50*40)
     
