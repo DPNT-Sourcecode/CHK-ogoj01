@@ -27,13 +27,15 @@ def checkout(skus):
 
     return total
 
-def check_invalid(skus):
+def check_invalid(skus, price_rules):
     #items_in_store = ['A', 'B', 'C', 'D', 'E']
-    items_in_store = 
+    items_in_store = list(zip(*price_rules))[1]
 
-    for item in skus:
-        if item not in items_in_store:
-            return -1
+    print(items_in_store)
+
+    #for item in skus:
+    #    if item not in items_in_store:
+    #        return -1
 
 
 
@@ -103,7 +105,7 @@ if __name__ == '__main__':
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
     print(200+50+45+45+30+20+20+20+15+40+40)
-    '''
+    
     print('Test14...')
     purchase = 'EEB'
     print(checkout(purchase))
@@ -113,7 +115,7 @@ if __name__ == '__main__':
     purchase = 'ABCEEE'
     print(checkout(purchase))
     print(40+40+0)
-    '''
+    
     print('Test16...')
     purchase = 'EEBB'
     print(checkout(purchase))
@@ -124,6 +126,7 @@ if __name__ == '__main__':
     print(checkout(purchase))
     print(40+40+0+45)
     '''
+    print(check_invalid())
 
 
  
