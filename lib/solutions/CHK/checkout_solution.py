@@ -65,7 +65,6 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
             if offer_rule in sorted_skus:
                 repetitions = sorted_skus.count(offer_rule)
-                print('rep: ',repetitions)
                 
                 if value not in sorted_skus:
                     print('No offer available for current shop list...')                    
@@ -76,7 +75,6 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
                     max_offer = sorted_skus.count(value)
                     iterator = min(repetitions, max_offer)
 
-                    print('max: ',max_offer)
                     for _ in range(1, iterator+1): 
                         shop_list = list(sorted_skus)                        
                         shop_list.pop(shop_list.index(value))                        
@@ -94,9 +92,9 @@ class Constant:
     PRICE_RULES = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
     OFFER_RULES = [(2, {'E': 'B'})]                
 
-if __name__ == '__main__':    
-
-    '''   
+'''
+if __name__ == '__main__': 
+       
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -171,7 +169,6 @@ if __name__ == '__main__':
     purchase = 'EEBB'
     print(checkout(purchase))
     print(40+40+0+30)
-    '''
     
     print('Test17...')
     purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBB'
@@ -189,9 +186,10 @@ if __name__ == '__main__':
     print(40+40+0+30)
 
     print('Test18...')
-    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBBBBBB'
+    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBABBBBB'
     print(checkout(purchase))
-    print(67*40+200+200+100)
+    print(67*40+50+15)
+'''
     
 
 
