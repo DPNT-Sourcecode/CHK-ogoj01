@@ -16,6 +16,7 @@ def checkout(skus):
 
     return total  
 
+
 def is_invalid(skus: str, price_rules: list) -> bool:
 
     products_map_list = list(zip(*price_rules))[1]
@@ -25,6 +26,7 @@ def is_invalid(skus: str, price_rules: list) -> bool:
         if item not in items_in_store:
             return True
     return False 
+
 
 def calculate_price(skus: str, price_rules: list) -> int:
     
@@ -38,13 +40,13 @@ def calculate_price(skus: str, price_rules: list) -> int:
             price_rule = quantity * item
             
             if price_rule in sorted_skus:   
-                nr_present_price_rules = sorted_skus.count(price_rule)       
-                total += nr_present_price_rules * price                
+                repetitions = sorted_skus.count(price_rule)       
+                total += repetitions * price                
                 sorted_skus = sorted_skus.replace(price_rule, '')
 
     return total
 
-def calculate_free_policy(skus, free_rules):
+def calculate_free_policy(skus, free_rules) -> str:
 
     sorted_skus = ''
     sorted_skus = ''.join(sorted(skus))
@@ -55,7 +57,11 @@ def calculate_free_policy(skus, free_rules):
             free_rule = quantity * item
 
             if free_rule in sorted_skus:
+
+                repetitions = sorted_skus.count(free_rule)
                 
+                if value not in sorted_skus:
+                    print('No offer available...')
 
 if __name__ == '__main__':
 
