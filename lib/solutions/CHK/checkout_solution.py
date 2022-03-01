@@ -59,29 +59,31 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
         for item, value in item_map.items():
 
             offer_rule = quantity * item
+            print(offer_rule)
 
             if offer_rule in sorted_skus:
                 repetitions = sorted_skus.count(offer_rule)
                 print(repetitions)
                 
                 if value not in sorted_skus:
+                    print(sorted_skus)
                     print('No offer available for current shop list...')                    
-                    return sorted_skus
+                    #return sorted_skus
 
                 else:
                     print('Calculating offers...')
-                    for _ in range(1, repetitions+1):
-                        #print(i)
+                    for i in range(1, repetitions+1):
+                        print(i)
                         shop_list = list(sorted_skus)
-                        #print(shop_list)
-                        #shop_list.pop(shop_list.index(value))
-                        product = shop_list.index(value)
-                        del(shop_list[product])
+                        print(shop_list)
+                        shop_list.pop(shop_list.index(value))
+                        #product = shop_list.index(value)
+                        #del(shop_list[product])
                         sorted_skus = ''.join(shop_list)
                     print('Offers applied to shop list!')
             else:
                 print('No offer available for current shop list...')
-                shop_list = list(sorted_skus)
+                #shop_list = list(sorted_skus)
 
     shop_list_with_offer = ''.join(shop_list)    
     return shop_list_with_offer
@@ -170,9 +172,7 @@ if __name__ == '__main__':
     print(40+40+0+30)
     '''
     print('Test17...')
-    purchase = 'EEEEEEEEEEEEEEEEEEEEBBBBBBEEEEBB'
+    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEBBBBBBBB'
     print(checkout(purchase))
-    print(24*40 +0)
+    print(4*40 +0)
     
-
-
