@@ -89,9 +89,19 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
     return shop_list_with_offer
 
 def calculate_group_policy(skus: str, group_rules: list):
-    
 
-    
+    sorted_skus = ''.join(sorted(skus))
+
+    print(skus)    
+
+    for quantity, item_map in group_rules:
+        for item, price in item_map.items():
+
+            group_rule = quantity * item
+
+            if group_rule in sorted_skus:
+                starting_index = sorted_skus.index(group_rule)
+                repetitions = sorted_skus.count(group_rule)
 
 class Constant:
 
