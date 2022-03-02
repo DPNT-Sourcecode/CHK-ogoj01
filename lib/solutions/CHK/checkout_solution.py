@@ -134,9 +134,9 @@ class Constant:
         (4, {'U': 'U'})
     ]
 
-if __name__ == '__main__': 
-    
-    ''' 
+'''
+if __name__ == '__main__':     
+
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -231,7 +231,7 @@ if __name__ == '__main__':
     purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBABBBBB'
     print(checkout(purchase))
     print(67*40+50+15)
-    '''
+    
     print('Test19...')
     purchase = 'FF'
     print(checkout(purchase))
@@ -248,9 +248,10 @@ if __name__ == '__main__':
     print(200+10+10+10+10)
 
     print('Test22...')
-    purchase = 'FFFHHHUU'
+    purchase = 'FFFHHHHHUUUU'
     print(checkout(purchase))
-    print()
+    print(10+10+45+40+40+40)
+'''
 
     
 
