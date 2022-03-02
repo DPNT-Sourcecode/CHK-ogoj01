@@ -91,6 +91,8 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 def calculate_group_policy(skus: str, group_rules: list):
 
     sorted_skus = ''.join(sorted(skus))
+    save_indexes = []
+    count_group_disc = 0
 
     print(skus)    
 
@@ -101,7 +103,16 @@ def calculate_group_policy(skus: str, group_rules: list):
 
             if group_rule in sorted_skus:
                 starting_index = sorted_skus.index(group_rule)
+                save_indexes.append(starting_index)
+
                 repetitions = sorted_skus.count(group_rule)
+
+                for idx in range(1, repetitions+1):
+                    save_indexes.append(starting_index+idx)
+
+                count_group_disc += repetitions
+
+                
 
 class Constant:
 
@@ -285,3 +296,4 @@ if __name__ == '__main__':
 '''
 
     
+
