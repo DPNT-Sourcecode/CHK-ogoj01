@@ -18,6 +18,7 @@ def checkout(skus):
     if is_invalid(skus, price_rules) is True: return -1
 
     partial_total, skus_with_group_disc = calculate_group_policy(skus, group_rules)
+    print('here')
     print(partial_total, skus_with_group_disc)
     skus_with_offers = calculate_offer_policy(skus_with_group_disc, offer_rules)
     total = partial_total + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
@@ -116,7 +117,7 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
                     save_indexes.append(starting_index+idx)
 
                 count_group_disc += repetitions
-                print('Counting...')
+                
                 if count_group_disc == Constant.GROUP_SIZE:
                     print('Removing...')
                     shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
@@ -188,10 +189,12 @@ class Constant:
 
 if __name__ == '__main__':
 
+    #check for purchase = only items from group discount -> must return min value
+
     print('Test23...')
-    purchase = 'STXYZ'
+    purchase = 'SSTSS'
     print(checkout(purchase))
-    print(50+30+20+45)     
+    print(45)     
     '''
     print('Test1...')
     purchase = 'ABCFF'
@@ -310,3 +313,4 @@ if __name__ == '__main__':
 '''
 
     
+
