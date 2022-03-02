@@ -84,11 +84,12 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
 class Constant:
 
-    PRICE_RULES = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40})]
-    OFFER_RULES = [(2, {'E': 'B'})]                
+    PRICE_RULES = [(5, {'A': 200}), (3, {'A': 130}), (2, {'B': 45}), (2, {'E': 80}), (1, {'A': 50}), (1, {'B': 30}), (1, {'C': 20}), (1, {'D': 15}), (1, {'E': 40}), (1, {'F': 15})]
+    OFFER_RULES = [(2, {'E': 'B'}), (3, {'F': 'F'})]                
 
-'''
+
 if __name__ == '__main__': 
+    '''
        
     print('Test1...')
     purchase = 'ABCFF'
@@ -174,7 +175,7 @@ if __name__ == '__main__':
     purchase = 'AAAAAABBBBBCCCDEE'
     print(checkout(purchase))
     print(200+50+45+45+0+3*20+15+40+40)
-
+    '''
     print('Test16...')
     purchase = 'EEBB'
     print(checkout(purchase))
@@ -184,5 +185,14 @@ if __name__ == '__main__':
     purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBABBBBB'
     print(checkout(purchase))
     print(67*40+50+15)
-'''
+
+    print('Test19...')
+    purchase = 'FF'
+    print(checkout(purchase))
+    print(67*40+50+15)
+
+    print('Test20...')
+    purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBABBBBB'
+    print(checkout(purchase))
+    print(67*40+50+15)
     
