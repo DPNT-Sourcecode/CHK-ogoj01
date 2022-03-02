@@ -7,8 +7,10 @@ def checkout(skus):
     '''
 
     price_rules = Constant.PRICE_RULES 
-    price_rules.sort(key = lambda x:x[0], reverse = True)   
+    price_rules.sort(key = lambda x:x[0], reverse = True)
+       
     offer_rules = Constant.OFFER_RULES
+    offer_rules.sort(key = lambda x:x[0], reverse = True)
 
     if is_invalid(skus, price_rules) is True: return -1
     skus_with_offers = calculate_offer_policy(skus, offer_rules)
@@ -85,12 +87,12 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
 class Constant:
 
-    PRICE_RULES = [
-        (5, {'A': 200}), 
+    PRICE_RULES = [         
         (3, {'A': 130}), 
         (2, {'B': 45}), 
         (2, {'E': 80}), 
         (1, {'A': 50}), 
+        (5, {'A': 200}),
         (1, {'B': 30}), 
         (1, {'C': 20}), 
         (1, {'D': 15}), 
@@ -205,17 +207,16 @@ if __name__ == '__main__':
     print('Test19...')
     purchase = 'FF'
     print(checkout(purchase))
-    print(15+15)
+    print(10+10)
 
     print('Test20...')
     purchase = 'FFF'
     print(checkout(purchase))
-    print(15+15)
+    print(10+10)
 
     print('Test21...')
     purchase = 'FAFAAAAFFFF'
     print(checkout(purchase))
-    print(200+15+15+15+15)
+    print(200+10+10+10+10)
 
     
-
