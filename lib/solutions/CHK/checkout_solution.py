@@ -6,7 +6,8 @@ def checkout(skus):
     Output: total checkout value (attention to special offers)
     '''
 
-    price_rules = Constant.PRICE_RULES
+    price_rules = Constant.PRICE_RULES 
+    price_rules.sort(key = lambda x:x[0], reverse = True)   
     offer_rules = Constant.OFFER_RULES
 
     if is_invalid(skus, price_rules) is True: return -1
@@ -102,10 +103,10 @@ class Constant:
         (3, {'F': 'F'})
     ]                
 
-'''
+
 if __name__ == '__main__': 
     
-       
+    ''' 
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -200,7 +201,7 @@ if __name__ == '__main__':
     purchase = 'EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEDEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBABBBBB'
     print(checkout(purchase))
     print(67*40+50+15)
-
+    '''
     print('Test19...')
     purchase = 'FF'
     print(checkout(purchase))
@@ -215,6 +216,6 @@ if __name__ == '__main__':
     purchase = 'FAFAAAAFFFF'
     print(checkout(purchase))
     print(200+15+15+15+15)
-'''
+
     
 
