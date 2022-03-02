@@ -17,9 +17,9 @@ def checkout(skus):
 
     if is_invalid(skus, price_rules) is True: return -1
 
-    partial_total, skus_with_group_disc = calculate_group_policy
-    skus_with_offers = calculate_offer_policy(skus, offer_rules)
-    total = min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
+    partial_total, skus_with_group_disc = calculate_group_policy(skus, group_rules)
+    skus_with_offers = calculate_offer_policy(skus_with_group_disc, offer_rules)
+    total = partial_total + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
     return total  
 
@@ -308,6 +308,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
