@@ -12,7 +12,7 @@ def checkout(skus):
     offer_rules = Constant.OFFER_RULES
     offer_rules.sort(key = lambda x:x[0], reverse = True)
 
-    group_rules = Constant.OFFER_RULES
+    group_rules = Constant.GROUP_RULES
     offer_rules.sort(key = lambda x:x[0], reverse = True)
 
     if is_invalid(skus, price_rules) is True: return -1
