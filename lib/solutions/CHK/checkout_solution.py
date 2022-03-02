@@ -109,16 +109,20 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
             group_rule = quantity * item
 
             if group_rule in sorted_skus:
+                repetitions = sorted_skus.count(group_rule)
+
+                if repetitions > Constant.GROUP_SIZE:
+                    #order skus by value ASC and pick last 3 items
+                    print('rep > 3')
+                
                 starting_index = sorted_skus.index(group_rule)
                 save_indexes.append(starting_index)
-
-                repetitions = sorted_skus.count(group_rule)
 
                 for idx in range(1, repetitions+1):
                     save_indexes.append(starting_index+idx)
 
                 count_group_disc += repetitions
-                print('count': count_group_disc)
+                print('count:', count_group_disc)
                 if count_group_disc == Constant.GROUP_SIZE:
                     print('Removing...')
                     shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
@@ -316,5 +320,6 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
