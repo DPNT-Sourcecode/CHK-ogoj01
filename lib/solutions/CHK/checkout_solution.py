@@ -1,8 +1,5 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
-from email import iterators
-
-
 def checkout(skus):
     '''
     Input: string of goods to checkout. Example: 'ABCADAZ'
@@ -13,9 +10,7 @@ def checkout(skus):
     offer_rules = Constant.OFFER_RULES
 
     if is_invalid(skus, price_rules) is True: return -1
-
     skus_with_offers = calculate_offer_policy(skus, offer_rules)
-
     total = min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
     return total  
