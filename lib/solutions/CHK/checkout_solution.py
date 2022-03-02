@@ -129,13 +129,10 @@ class Constant:
     OFFER_RULES = [
         (2, {'E': 'B'}),
         (3, {'F': 'F'}),
-        (2, {'E': 'B'}),
-        (2, {'E': 'B'}),
-        (2, {'E': 'B'}),
-        (2, {'E': 'B'}),
-        (2, {'E': 'B'})
-    ]                
-
+        (3, {'N': 'M'}),
+        (3, {'R': 'Q'}),
+        (4, {'U': 'U'})
+    ]
 
 if __name__ == '__main__': 
     
@@ -249,6 +246,11 @@ if __name__ == '__main__':
     purchase = 'FAFAAAAFFFF'
     print(checkout(purchase))
     print(200+10+10+10+10)
+
+    print('Test22...')
+    purchase = 'FFFHHHUU'
+    print(checkout(purchase))
+    print()
 
     
 
