@@ -12,8 +12,8 @@ def checkout(skus):
     offer_rules = Constant.OFFER_RULES
     offer_rules.sort(key = lambda x:x[0], reverse = True)
 
-    group_rules = Constant.OFFER_RULES
-    offer_rules.sort(key = lambda x:x[0], reverse = True)
+    group_rules = Constant.GROUP_RULES
+    group_rules.sort(key = lambda x:x[0], reverse = True)
 
     if is_invalid(skus, price_rules) is True: return -1
     skus_with_offers = calculate_offer_policy(skus, offer_rules)
@@ -36,7 +36,7 @@ def is_invalid(skus: str, price_rules: list) -> bool:
 def calculate_price(skus: str, price_rules: list) -> int:
     
     total = 0
-    sorted_skus = ''
+    #sorted_skus = ''
     sorted_skus = ''.join(sorted(skus))
 
     for quantity, item_map in price_rules:
@@ -54,7 +54,7 @@ def calculate_price(skus: str, price_rules: list) -> int:
 
 def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
-    sorted_skus = ''
+    #sorted_skus = ''
     sorted_skus = ''.join(sorted(skus))
 
     print(skus)
@@ -87,6 +87,11 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
 
     shop_list_with_offer = ''.join(shop_list)
     return shop_list_with_offer
+
+def calculate_group_policy(skus: str, group_rules: list):
+    
+
+    
 
 class Constant:
 
