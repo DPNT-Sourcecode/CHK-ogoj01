@@ -18,6 +18,7 @@ def checkout(skus):
     if is_invalid(skus, price_rules) is True: return -1
 
     partial_total, skus_with_group_disc = calculate_group_policy(skus, group_rules)
+    print(partial_total, skus_with_group_disc)
     skus_with_offers = calculate_offer_policy(skus_with_group_disc, offer_rules)
     total = partial_total + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
@@ -160,9 +161,9 @@ class Constant:
         (2, {'V': 90}),
         (3, {'V': 130}),
         (1, {'W': 20}),
-        (1, {'X': 90}),
-        (1, {'Y': 10}),
-        (1, {'Z': 50})      
+        (1, {'X': 17}),
+        (1, {'Y': 20}),
+        (1, {'Z': 21})      
     ]
     
     OFFER_RULES = [
@@ -308,9 +309,3 @@ if __name__ == '__main__':
 '''
 
     
-
-
-
-
-
-
