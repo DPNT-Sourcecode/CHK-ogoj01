@@ -111,6 +111,12 @@ def calculate_group_policy(skus: str, group_rules: list):
                     save_indexes.append(starting_index+idx)
 
                 count_group_disc += repetitions
+                if count_group_disc == 3:
+                    print('Removing...')
+
+                    
+
+                    
 
                 
 
@@ -296,4 +302,5 @@ if __name__ == '__main__':
 '''
 
     
+
 
