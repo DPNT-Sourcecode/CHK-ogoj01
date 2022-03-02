@@ -93,6 +93,7 @@ def calculate_group_policy(skus: str, group_rules: list):
     sorted_skus = ''.join(sorted(skus))
     save_indexes = []
     count_group_disc = 0
+    group_discount_total = 0
 
     print(skus)    
 
@@ -111,10 +112,13 @@ def calculate_group_policy(skus: str, group_rules: list):
                     save_indexes.append(starting_index+idx)
 
                 count_group_disc += repetitions
-                if count_group_disc == 3:
+                if count_group_disc == Constant.GROUP_SIZE:
                     print('Removing...')
+                    shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
+                    group_discount_total += count_group_disc * price
 
-                    
+
+
 
                     
 
@@ -168,6 +172,8 @@ class Constant:
         (3, {'R': 'Q'}),
         (4, {'U': 'U'})
     ]
+
+    GROUP_SIZE = 3
 
     GROUP_RULES = [
         (1, {'S': 15}),
@@ -302,5 +308,6 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
