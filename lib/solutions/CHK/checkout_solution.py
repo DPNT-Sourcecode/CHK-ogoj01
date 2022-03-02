@@ -116,6 +116,7 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
                     save_indexes.append(starting_index+idx)
 
                 count_group_disc += repetitions
+                print('Counting...')
                 if count_group_disc == Constant.GROUP_SIZE:
                     print('Removing...')
                     shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
@@ -188,9 +189,9 @@ class Constant:
 if __name__ == '__main__':
 
     print('Test23...')
-    purchase = 'SSSS'
+    purchase = 'STXYZ'
     print(checkout(purchase))
-    print(45+30)     
+    print(50+30+20+45)     
     '''
     print('Test1...')
     purchase = 'ABCFF'
