@@ -16,6 +16,8 @@ def checkout(skus):
     group_rules.sort(key = lambda x:x[0], reverse = True)
 
     if is_invalid(skus, price_rules) is True: return -1
+
+    partial_total, skus_with_group_disc = calculate_group_policy
     skus_with_offers = calculate_offer_policy(skus, offer_rules)
     total = min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
@@ -88,12 +90,13 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
     shop_list_with_offer = ''.join(shop_list)
     return shop_list_with_offer
 
-def calculate_group_policy(skus: str, group_rules: list):
+def calculate_group_policy(skus: str, group_rules: list) -> tuple:
 
     sorted_skus = ''.join(sorted(skus))
     save_indexes = []
     count_group_disc = 0
     group_discount_total = 0
+    shop_list = ''
 
     print(skus)    
 
@@ -116,13 +119,10 @@ def calculate_group_policy(skus: str, group_rules: list):
                     print('Removing...')
                     shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
                     group_discount_total += count_group_disc * price
+                    count_group_disc = 0
 
+    return group_discount_total, shop_list
 
-
-
-                    
-
-                
 
 class Constant:
 
@@ -308,6 +308,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
