@@ -129,7 +129,7 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
                     if count_group_disc == Constant.GROUP_SIZE:
                         print('Removing...')
                         shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
-                        group_discount_total += count_group_disc * price
+                        group_discount_total += Constant.GROUP_SIZE * price
                         count_group_disc = 0
             else:
                 shop_list = sorted_skus
@@ -202,7 +202,7 @@ if __name__ == '__main__':
     #check for purchase = only items from group discount -> must return min value
 
     print('Test23...')
-    purchase = 'STXYZ'
+    purchase = 'XXXX'
     print(checkout(purchase))
     print()     
     '''
@@ -323,6 +323,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
