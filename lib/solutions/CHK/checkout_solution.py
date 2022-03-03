@@ -106,6 +106,8 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
         else:
             item_not_in_group_rules.append(char)
 
+    #from those that apply, sort them by Price rules values
+
         
 
 class Constant:
@@ -288,4 +290,5 @@ if __name__ == '__main__':
 '''
 
     
+
 
