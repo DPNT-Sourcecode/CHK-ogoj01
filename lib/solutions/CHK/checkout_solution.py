@@ -122,12 +122,12 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
     items_to_process_sorted = list(list(zip(*sorted(dicts_in_grouped_rules_sorted, key=lambda x:x[1], reverse=False)))[0])
 
     if len(items_to_process_sorted) % Constant.GROUP_SIZE == 0:
-        return ''.join(item_not_in_group_rules), len(items_to_process_sorted/Constant.GROUP_SIZE)*Constant.GROUP_PRICE
+        return ''.join(item_not_in_group_rules), (len(items_to_process_sorted)/Constant.GROUP_SIZE)*Constant.GROUP_PRICE
     else:
         first_elem = items_to_process_sorted[0]
         items_to_process_sorted.pop(0)
         item_not_in_group_rules.append(first_elem)
-        return ''.join(item_not_in_group_rules), len(items_to_process_sorted/Constant.GROUP_SIZE)*Constant.GROUP_PRICE
+        return ''.join(item_not_in_group_rules), (len(items_to_process_sorted)/Constant.GROUP_SIZE)*Constant.GROUP_PRICE
 
 class Constant:
 
@@ -188,7 +188,7 @@ if __name__ == '__main__':
 
    
     print('Test23...')
-    purchase = 'XXXXXXXX'
+    purchase = 'SSSSSS'
     print(checkout(purchase))
     print(45*2 + 2*17)     
     '''
@@ -309,6 +309,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
