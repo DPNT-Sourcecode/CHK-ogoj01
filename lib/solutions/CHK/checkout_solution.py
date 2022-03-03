@@ -112,10 +112,9 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
                 repetitions = sorted_skus.count(group_rule)
 
                 if repetitions > Constant.GROUP_SIZE:
-                    #get_priced_ordered_skus_asc()
-                    #order skus by value ASC and pick last 3 items
-                    print('rep > 3')
-                    print(group_rule)
+                    print(f"Repetitions of {group_rule} > 3")
+                    
+                   
 
                 else:                
                     starting_index = sorted_skus.index(group_rule)
@@ -323,8 +322,3 @@ if __name__ == '__main__':
 '''
 
     
-
-
-
-
-
