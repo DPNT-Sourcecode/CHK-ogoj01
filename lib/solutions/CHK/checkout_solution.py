@@ -93,8 +93,8 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
 
     item_in_group_rules = []
     item_not_in_group_rules = []
-    items_subject_to_group_rules = list(group_rules[0][0])
-
+    items_subject_to_group_rules = list(group_rules[0])
+    
     #separate skus that don't apply group rules
     for char in skus:
         if char in items_subject_to_group_rules:
@@ -105,12 +105,10 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
     #from those that apply, sort them by individual price rules values
     list_individual_prices = []
 
-    for rule in Constant.PRICE_RULES:
+    for rule in Constant.PRICE_RULES:        
         for key, _ in rule[1].items():
             if key in item_in_group_rules and rule[0] == 1:
                 list_individual_prices.append(rule[1])
-
-    print(list_individual_prices)
 
     #sort
     dicts_in_grouped_rules_sorted = []
@@ -190,9 +188,9 @@ if __name__ == '__main__':
 
    
     print('Test23...')
-    purchase = 'ZZZZZZZZ'
+    purchase = 'XXXXXXXX'
     print(checkout(purchase))
-    print(45*2)     
+    print(45*2 + 21+21)     
     '''
     print('Test1...')
     purchase = 'ABCFF'
