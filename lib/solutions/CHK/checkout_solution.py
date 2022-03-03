@@ -113,8 +113,8 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
 
                 if repetitions > Constant.GROUP_SIZE:
                     print(f"Repetitions of {group_rule} > 3")
-                    
-                   
+                    shop_list = ''.join(group_rule * (repetitions-Constant.GROUP_SIZE))
+                    print(shop_list)
 
                 else:                
                     starting_index = sorted_skus.index(group_rule)
@@ -201,7 +201,7 @@ if __name__ == '__main__':
     #check for purchase = only items from group discount -> must return min value
 
     print('Test23...')
-    purchase = 'XXXX'
+    purchase = 'XXXXXXXX'
     print(checkout(purchase))
     print()     
     '''
