@@ -112,22 +112,25 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
                 repetitions = sorted_skus.count(group_rule)
 
                 if repetitions > Constant.GROUP_SIZE:
+                    #get_priced_ordered_skus_asc()
                     #order skus by value ASC and pick last 3 items
                     print('rep > 3')
-                
-                starting_index = sorted_skus.index(group_rule)
-                save_indexes.append(starting_index)
+                    print(group_rule)
 
-                for idx in range(1, repetitions+1):
-                    save_indexes.append(starting_index+idx)
+                else:                
+                    starting_index = sorted_skus.index(group_rule)
+                    save_indexes.append(starting_index)
 
-                count_group_disc += repetitions
-                print('count:', count_group_disc)
-                if count_group_disc == Constant.GROUP_SIZE:
-                    print('Removing...')
-                    shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
-                    group_discount_total += count_group_disc * price
-                    count_group_disc = 0
+                    for idx in range(1, repetitions+1):
+                        save_indexes.append(starting_index+idx)
+
+                    count_group_disc += repetitions
+                    print('count:', count_group_disc)
+                    if count_group_disc == Constant.GROUP_SIZE:
+                        print('Removing...')
+                        shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
+                        group_discount_total += count_group_disc * price
+                        count_group_disc = 0
             else:
                 shop_list = sorted_skus
 
@@ -199,7 +202,7 @@ if __name__ == '__main__':
     #check for purchase = only items from group discount -> must return min value
 
     print('Test23...')
-    purchase = 'SSSS'
+    purchase = 'STXYZ'
     print(checkout(purchase))
     print()     
     '''
@@ -320,6 +323,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
