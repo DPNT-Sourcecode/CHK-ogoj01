@@ -125,14 +125,13 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
     
     #get keys from items to process sorted
 
-    items_to_process_sorted = 
+    items_to_process_sorted = list(list(zip(*sorted(dicts_in_grouped_rules_sorted, key=lambda x:x[1], reverse=False)))[0])
 
+    if len(items_to_process_sorted) % Constant.GROUP_SIZE == 0:
 
+    else:
+        pass
 
-
-
-    for char in item_in_group_rules:
-        for dic in 
 
         
 
@@ -316,6 +315,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
