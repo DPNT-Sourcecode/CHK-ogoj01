@@ -109,13 +109,24 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
     #from those that apply, sort them by individual price rules values
     list_individual_prices = []
 
-    for rule in Constant. :
+    for rule in Constant.PRICE_RULES:
         for key, _ in rule[1].items():
             if key in item_in_group_rules and rule[0] == 1:
                 list_individual_prices.append(rule[1])
 
     #sort
+    dicts_in_grouped_rules_sorted = []
+
     for char in item_in_group_rules:
+        for dic in list_individual_prices:
+            for key, val in dic.items():
+                if char == key:
+                    dicts_in_grouped_rules_sorted.append((char, val))
+    
+    #get keys from items to process sorted
+
+    items_to_process_sorted = 
+
 
 
 
@@ -305,6 +316,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
