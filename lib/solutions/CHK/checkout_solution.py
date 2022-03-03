@@ -192,7 +192,7 @@ if __name__ == '__main__':
 
    
     print('Test23...')
-    purchase = 'XX'
+    purchase = 'XXXXXXXX'
     print(checkout(purchase))
     print(45*2 + 17*2)     
     '''
@@ -313,5 +313,6 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
