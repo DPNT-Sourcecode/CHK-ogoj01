@@ -17,11 +17,10 @@ def checkout(skus):
     if is_invalid(skus, price_rules) is True: return -1
 
     skus_with_group_offs, partial_sum = calculate_group_policy(skus, group_rules)
-    print(skus, skus_with_group_offs, partial_sum)
     skus_with_offers = calculate_offer_policy(skus_with_group_offs, offer_rules)
     total = partial_sum + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
-    return total  
+    return int(total)
 
 
 def is_invalid(skus: str, price_rules: list) -> bool:
@@ -194,9 +193,9 @@ if __name__ == '__main__':
 
    
     print('Test23...')
-    purchase = 'XXXXXXXX'
+    purchase = 'SSSSSSSSS'
     print(checkout(purchase))
-    print(45*2 + 17*2)     
+    print(45*3)     
     '''
     print('Test1...')
     purchase = 'ABCFF'
@@ -315,6 +314,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
