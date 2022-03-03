@@ -13,16 +13,12 @@ def checkout(skus):
     offer_rules.sort(key = lambda x:x[0], reverse = True)
 
     group_rules = Constant.GROUP_RULES
-    group_rules.sort(key = lambda x:x[0], reverse = True)
 
     if is_invalid(skus, price_rules) is True: return -1
 
-    partial_total, skus_with_group_disc = calculate_group_policy(skus, group_rules)
-    print('here')
-    print(partial_total)
-    print(skus_with_group_disc)
-    skus_with_offers = calculate_offer_policy(skus_with_group_disc, offer_rules)
-    total = partial_total + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
+    skus_with_group_offs, partial_sum = calculate_group_policy(skus, group_rules)
+    skus_with_offers = calculate_offer_policy(skus_with_group_offs, offer_rules)
+    total = partial_sum + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
     return total  
 
@@ -194,7 +190,7 @@ if __name__ == '__main__':
     print('Test23...')
     purchase = 'XXXXXXXX'
     print(checkout(purchase))
-    print()     
+    print(45*2 + 2*17)     
     '''
     print('Test1...')
     purchase = 'ABCFF'
@@ -313,6 +309,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
