@@ -21,7 +21,7 @@ def checkout(skus):
     skus_with_offers = calculate_offer_policy(skus_with_group_offs, offer_rules)
     total = partial_sum + min(calculate_price(skus, price_rules), calculate_price(skus_with_offers, price_rules))
 
-    return int(total)  
+    return total  
 
 
 def is_invalid(skus: str, price_rules: list) -> bool:
@@ -103,8 +103,8 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
         else:
             item_not_in_group_rules.append(char)
 
-    print(item_in_group_rules)
-    print(item_not_in_group_rules)
+    if len(item_in_group_rules) < Constant.GROUP_SIZE:
+        return skus, 0
 
     #from those that apply, sort them by individual price rules values
     list_individual_prices = []
@@ -313,4 +313,5 @@ if __name__ == '__main__':
 '''
 
     
+
 
