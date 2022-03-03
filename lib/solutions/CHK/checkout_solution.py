@@ -163,7 +163,7 @@ class Constant:
         (1, {'Q': 30}),
         (3, {'Q': 80}),
         (1, {'R': 50}),
-        (1, {'S': 30}),
+        (1, {'S': 20}),
         (1, {'T': 20}),
         (1, {'U': 40}),
         (1, {'V': 50}),
@@ -188,15 +188,15 @@ class Constant:
 
     GROUP_RULES = ['STXYZ', GROUP_SIZE, GROUP_PRICE]
 
-
+'''
 if __name__ == '__main__':
 
    
     print('Test23...')
-    purchase = 'SSSSSSSSS'
+    purchase = 'S'
     print(checkout(purchase))
     print(45*3)     
-    '''
+    
     print('Test1...')
     purchase = 'ABCFF'
     print(checkout(purchase))
@@ -314,6 +314,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
