@@ -94,47 +94,10 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
     return shop_list_with_offer
 
 def calculate_group_policy(skus: str, group_rules: list) -> tuple:
-
-    sorted_skus = ''.join(sorted(skus))
-    save_indexes = []
-    count_group_disc = 0
-    group_discount_total = 0
-    shop_list = ''
-
-    print(skus)    
-
-    for quantity, item_map in group_rules:
-        for item, price in item_map.items():
-
-            group_rule = quantity * item
-
-            if group_rule in sorted_skus:
-                repetitions = sorted_skus.count(group_rule)
-
-                if repetitions > Constant.GROUP_SIZE:
-                    print(f"Repetitions of {group_rule} > 3")
-                    shop_list = ''.join(group_rule * (repetitions-Constant.GROUP_SIZE))
-                    print(shop_list)
-
-                else:                
-                    starting_index = sorted_skus.index(group_rule)
-                    save_indexes.append(starting_index)
-
-                    for idx in range(1, repetitions+1):
-                        save_indexes.append(starting_index+idx)
-
-                    count_group_disc += repetitions
-                    print('count:', count_group_disc)
-                    if count_group_disc == Constant.GROUP_SIZE:
-                        print('Removing...')
-                        shop_list = ''.join([char for idx, char in enumerate(sorted_skus) if idx not in set(save_indexes)])
-                        group_discount_total += Constant.GROUP_SIZE * price
-                        count_group_disc = 0
-            else:
-                shop_list = sorted_skus
-
-    return group_discount_total, shop_list
-
+    
+    item_in_group_rules = []
+    item_not_in_group_rules = []
+    
 
 class Constant:
 
@@ -186,20 +149,14 @@ class Constant:
     ]
 
     GROUP_SIZE = 3
+    GROUP_PRICE = 45
 
-    GROUP_RULES = [
-        (1, {'S': 15}),
-        (1, {'T': 15}),
-        (1, {'X': 15}),
-        (1, {'Y': 15}),
-        (1, {'Z': 15})
-    ]
+    GROUP_RULES = ['STXYZ', GROUP_SIZE, GROUP_PRICE]
 
 
 if __name__ == '__main__':
 
-    #check for purchase = only items from group discount -> must return min value
-
+   
     print('Test23...')
     purchase = 'XXXXXXXX'
     print(checkout(purchase))
