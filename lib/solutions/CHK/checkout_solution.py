@@ -128,9 +128,11 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
     if len(items_to_process_sorted) % Constant.GROUP_SIZE == 0:
         return ''.join(item_not_in_group_rules), (len(items_to_process_sorted)/Constant.GROUP_SIZE)*Constant.GROUP_PRICE
     else:
-        first_elem = items_to_process_sorted[0]
-        items_to_process_sorted.pop(0)
-        item_not_in_group_rules.append(first_elem)
+        mod = len(items_to_process_sorted) % Constant.GROUP_SIZE
+        elems = items_to_process_sorted[:mod]
+        for i in range(len(elems)):
+            items_to_process_sorted.pop(i)
+            item_not_in_group_rules.append(elems[i])
         return ''.join(item_not_in_group_rules), (len(items_to_process_sorted)/Constant.GROUP_SIZE)*Constant.GROUP_PRICE
 
 class Constant:
@@ -313,6 +315,7 @@ if __name__ == '__main__':
 '''
 
     
+
 
 
 
