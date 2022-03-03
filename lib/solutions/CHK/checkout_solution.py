@@ -110,6 +110,8 @@ def calculate_group_policy(skus: str, group_rules: list) -> tuple:
             if key in item_in_group_rules and rule[0] == 1:
                 list_individual_prices.append(rule[1])
 
+    print(list_individual_prices)
+
     #sort
     dicts_in_grouped_rules_sorted = []
 
@@ -188,9 +190,9 @@ if __name__ == '__main__':
 
    
     print('Test23...')
-    purchase = 'SSSSSS'
+    purchase = 'ZZZZZZZZ'
     print(checkout(purchase))
-    print(45*2 + 2*17)     
+    print(45*2)     
     '''
     print('Test1...')
     purchase = 'ABCFF'
@@ -309,11 +311,3 @@ if __name__ == '__main__':
 '''
 
     
-
-
-
-
-
-
-
-
