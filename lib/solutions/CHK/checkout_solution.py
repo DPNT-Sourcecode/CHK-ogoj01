@@ -94,10 +94,19 @@ def calculate_offer_policy(skus: str, offer_rules: list) -> str:
     return shop_list_with_offer
 
 def calculate_group_policy(skus: str, group_rules: list) -> tuple:
-    
+
     item_in_group_rules = []
     item_not_in_group_rules = []
-    
+    items_subject_to_group_rules = list(group_rules[0][0])
+
+    #separate skus that don't apply group rules
+    for char in skus:
+        if char in items_subject_to_group_rules:
+            item_in_group_rules.append(char)
+        else:
+            item_not_in_group_rules.append(char)
+
+        
 
 class Constant:
 
@@ -279,3 +288,4 @@ if __name__ == '__main__':
 '''
 
     
+
